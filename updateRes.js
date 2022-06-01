@@ -48,10 +48,11 @@ for (ytb of ytbList) {
   }
 
   const existFiles = config.file_data.map((file) => file.md5);
-  console.log(ytb+'当前资源列表: ',existFiles);
+  console.log(ytb + "当前资源列表: ", existFiles);
 
   for (file of files) {
     if (!existFiles.includes(file.split(".")[0])) {
+      const file_name = file.split(".")[0];
       const file_base64 = fs.readFileSync(
         path.join(ytbDirPath, file),
         "base64"
@@ -67,11 +68,11 @@ for (ytb of ytbList) {
       );
 
       config.file_data.push({
-        name: file.split(".")[0],
+        name: file_name,
         md5: md5,
         tag: "音频切片",
       });
-      console.log("新文件: "+file);
+      console.log("新文件: " + file);
     }
   }
   fs.writeFileSync(

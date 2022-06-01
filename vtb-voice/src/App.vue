@@ -6,7 +6,7 @@ console.log(window.document.location.href)
 
 <template>
   <PageHeader vtbName="Meguri" />
-  <MainBody />
+  <MainBody vtbName="Meguri" />
 </template>
 
 <style>

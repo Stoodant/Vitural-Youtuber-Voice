@@ -1,15 +1,13 @@
 <template>
   <div class="body-div">
-    <el-space>
-      <VoiceCard
-        v-for="file in voiceList.data"
-        :key="file.md5"
-        :vtbName="vtbName"
-        :fileName="file.name"
-        :md5="file.md5"
-        :tag="file.tag"
-      />
-    </el-space>
+    <VoiceCard
+      v-for="file of voiceList.data"
+      :key="file.md5"
+      :vtbName="vtbName"
+      :fileName="file.name"
+      :md5="file.md5"
+      :tag="file.tag"
+    />
   </div>
 </template>
 

@@ -29,7 +29,6 @@ axios
   )
   .then(function (response) {
     voiceList.data = response?.data?.file_data ?? [];
-    console.log(voiceList.data);
   })
   .catch(function (error) {
     console.error(error);
@@ -41,5 +40,6 @@ axios
   background-color: #f0f2f5;
   min-height: calc(100vh - 48px);
   padding: 8px;
+  overflow: auto;
 }
 </style>
